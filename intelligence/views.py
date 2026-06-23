@@ -5,6 +5,8 @@ from .services.ingestion_service import IngestionService
 
 from rest_framework import generics
 
+from rest_framework.permissions import AllowAny
+
 from .models import IntelligenceRecord
 
 from .serializers import (
@@ -15,6 +17,8 @@ from .serializers import (
 # Create your views here.
 
 class IntelligenceListView(generics.ListAPIView):
+    authentication_classes = []
+    permission_classes = [AllowAny]
     queryset = IntelligenceRecord.objects.all()
     serializer_class = IntelligenceRecordSerializer
     filterset_fields = ["source", "category", "severity"]
