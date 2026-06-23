@@ -1,0 +1,4 @@
+api.systemassurancesolutions.com {
+    encode gzip
+    reverse_proxy api:8000
+}
