@@ -32,3 +32,4 @@ htmlcov/
 
 # Docker / local
 *.log
+docker-compose.override.yml
